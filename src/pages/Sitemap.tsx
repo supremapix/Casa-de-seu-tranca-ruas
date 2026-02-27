@@ -17,6 +17,7 @@ export const Sitemap = () => {
       <Helmet>
         <title>Mapa do Site | Casa de Seu Tranca Ruas</title>
         <meta name="description" content="Navegue por todas as páginas e cidades atendidas pela Casa de Seu Tranca Ruas." />
+        <link rel="canonical" href="https://www.casadeseutrancaruas.info/mapa-do-site" />
       </Helmet>
 
       <motion.div 

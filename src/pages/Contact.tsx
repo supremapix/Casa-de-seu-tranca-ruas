@@ -19,6 +19,7 @@ export const Contact = () => {
       <Helmet>
         <title>Contato | Casa de Seu Tranca Ruas</title>
         <meta name="description" content="Entre em contato com a Casa de Seu Tranca Ruas. Atendimento 24h via WhatsApp para consultas espirituais e amarrações amorosas." />
+        <link rel="canonical" href="https://www.casadeseutrancaruas.info/contato" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto">

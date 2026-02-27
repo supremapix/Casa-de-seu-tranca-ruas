@@ -1,9 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ais-dev-ngnogedxsplqiwhdwf7pne-159672162471.us-east1.run.app/</loc><priority>1.0</priority></url>
-  <url><loc>https://ais-dev-ngnogedxsplqiwhdwf7pne-159672162471.us-east1.run.app/servicos</loc><priority>0.8</priority></url>
-  <url><loc>https://ais-dev-ngnogedxsplqiwhdwf7pne-159672162471.us-east1.run.app/sobre</loc><priority>0.8</priority></url>
-  <url><loc>https://ais-dev-ngnogedxsplqiwhdwf7pne-159672162471.us-east1.run.app/estados</loc><priority>0.8</priority></url>
-  <url><loc>https://ais-dev-ngnogedxsplqiwhdwf7pne-159672162471.us-east1.run.app/contato</loc><priority>0.8</priority></url>
-  <url><loc>https://ais-dev-ngnogedxsplqiwhdwf7pne-159672162471.us-east1.run.app/mapa-do-site</loc><priority>0.5</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/sobre</loc><priority>0.8</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/servicos</loc><priority>0.9</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/contato</loc><priority>0.8</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/mapa-do-site</loc><priority>0.5</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados</loc><priority>0.7</priority></url>
+  
+  <!-- Rio Grande do Sul -->
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/porto-alegre</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/pelotas</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/canoas</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/santa-maria</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/gravatai</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/viamao</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/novo-hamburgo</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/sao-leopoldo</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/rio-grande</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/alvorada</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/passo-fundo</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/sapucaia-do-sul</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/uruguaiana</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/santa-cruz-do-sul</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rs/cachoeirinha</loc><priority>0.6</priority></url>
+
+  <!-- Bahia -->
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/salvador</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/feira-de-santana</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/vitoria-da-conquista</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/camacari</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/itabuna</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/juazeiro</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/lauro-de-freitas</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/ilheus</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/jequie</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/teixeira-de-freitas</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/alagoinhas</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/barreiras</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/porto-seguro</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/simoes-filho</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ba/paulo-afonso</loc><priority>0.6</priority></url>
+
+  <!-- Rio de Janeiro -->
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/rio-de-janeiro</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/sao-goncalo</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/duque-de-caxias</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/nova-iguacu</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/niteroi</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/belford-roxo</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/campos-dos-goytacazes</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/sao-joao-de-meriti</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/petropolis</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/volta-redonda</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/macae</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/mage</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/itaborai</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/mesquita</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/rj/nova-friburgo</loc><priority>0.6</priority></url>
+
+  <!-- Maranhão -->
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/sao-luis</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/imperatriz</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/sao-jose-de-ribamar</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/timon</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/caxias</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/codo</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/paco-do-lumiar</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/acailandia</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/bacabal</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/balsas</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/santa-ines</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/pinheiro</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/chapadinha</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/buriticupu</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/ma/grajau</loc><priority>0.6</priority></url>
+
+  <!-- Goiás e DF -->
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/goiania</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/aparecida-de-goiania</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/anapolis</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/rio-verde</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/luziania</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/aguas-lindas-de-goias</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/valparaiso-de-goias</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/trindade</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/formosa</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/novo-gama</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/senador-canedo</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/itumbiara</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/catalao</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/jatai</loc><priority>0.6</priority></url>
+  <url><loc>https://www.casadeseutrancaruas.info/estados/go-df/brasilia</loc><priority>0.6</priority></url>
 </urlset>

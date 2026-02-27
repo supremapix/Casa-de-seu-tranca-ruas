@@ -40,11 +40,59 @@ export const StatePage = () => {
 
   if (!state) return <div className="py-20 text-center text-gold">Estado não encontrado.</div>;
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `Casa de Seu Tranca Ruas - ${state.name}`,
+    "description": `Trabalhos espirituais e amarração amorosa em todo o estado de ${state.name}. Atendimento em Porto Alegre, Salvador, Rio de Janeiro e mais.`,
+    "url": window.location.href,
+    "telephone": "+5541996865804",
+    "image": "https://www.casadeseutrancaruas.info/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": state.name,
+      "addressCountry": "BR"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": state.name
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços Espirituais",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Amarração Amorosa Definitiva"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Abertura de Caminhos"
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "205"
+    }
+  };
+
   return (
     <div className="bg-dark min-h-screen py-20 px-4">
       <Helmet>
         <title>Amarração Amorosa em {state.name} | Casa de Seu Tranca Ruas</title>
         <meta name="description" content={`Trabalhos espirituais e amarração amorosa em todo o estado de ${state.name}. Atendimento em Porto Alegre, Salvador, Rio de Janeiro e mais.`} />
+        <link rel="canonical" href={`https://www.casadeseutrancaruas.info/estados/${stateSlug}`} />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
       </Helmet>
 
       <div className="max-w-7xl mx-auto">

@@ -43,6 +43,7 @@ export const States = () => {
       <Helmet>
         <title>Estados Atendidos | Casa de Seu Tranca Ruas</title>
         <meta name="description" content="Veja os estados e cidades onde realizamos amarração amorosa e trabalhos espirituais. Atendimento em todo o Brasil." />
+        <link rel="canonical" href="https://www.casadeseutrancaruas.info/estados" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto">

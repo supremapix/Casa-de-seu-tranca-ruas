@@ -9,6 +9,7 @@ export const About = () => {
       <Helmet>
         <title>Sobre Nós | Casa de Seu Tranca Ruas</title>
         <meta name="description" content="Conheça a história e os fundamentos da Casa de Seu Tranca Ruas. Especialistas em trabalhos espirituais de alta potência e resultados garantidos." />
+        <link rel="canonical" href="https://www.casadeseutrancaruas.info/sobre" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto">

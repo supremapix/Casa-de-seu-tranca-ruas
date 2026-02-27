@@ -26,14 +26,58 @@ export const CityPage = () => {
     "@type": "LocalBusiness",
     "name": `Casa de Seu Tranca Ruas - ${city}`,
     "description": `Amarração amorosa poderosa e trabalhos espirituais em ${city}, ${state.name}. Traga seu amor de volta com a força de Tranca Ruas das Almas.`,
+    "url": window.location.href,
+    "telephone": "+5541996865804",
+    "image": "https://www.casadeseutrancaruas.info/og-image.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": city,
       "addressRegion": state.name,
       "addressCountry": "BR"
     },
-    "telephone": "+5541996865804",
-    "url": window.location.href
+    "areaServed": {
+      "@type": "City",
+      "name": city
+    },
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoRadius": "50000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços Espirituais",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Amarração Amorosa Definitiva",
+            "description": "Trabalho espiritual para unir casais e trazer o amor de volta."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Abertura de Caminhos",
+            "description": "Remoção de obstáculos financeiros e profissionais."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Limpeza Espiritual",
+            "description": "Descarrego e proteção contra inveja e demandas."
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "205"
+    }
   };
 
   return (
@@ -41,6 +85,7 @@ export const CityPage = () => {
       <Helmet>
         <title>Amarração Amorosa em {city} - {state.name} | Casa de Seu Tranca Ruas</title>
         <meta name="description" content={`Procurando amarração amorosa em ${city}? A Casa de Seu Tranca Ruas realiza trabalhos espirituais poderosos para trazer o ex de volta e abrir caminhos em ${city}, ${state.name}.`} />
+        <link rel="canonical" href={`https://www.casadeseutrancaruas.info/estados/${stateSlug}/${citySlug}`} />
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>

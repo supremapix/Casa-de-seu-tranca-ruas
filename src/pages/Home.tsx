@@ -60,6 +60,7 @@ export const Home = () => {
       <Helmet>
         <title>Casa de Seu Tranca Ruas | Amarração Amorosa e Trabalho Espiritual</title>
         <meta name="description" content="A Casa de Seu Tranca Ruas oferece amarração amorosa poderosa, ebós para dinheiro e limpeza espiritual. Resultados garantidos e sigilo total." />
+        <link rel="canonical" href="https://www.casadeseutrancaruas.info/" />
       </Helmet>
 
       {/* --- Hero Section --- */}

@@ -41,7 +41,7 @@
   .marquee-vertical {
     display: flex;
     flex-direction: column;
-    animation: marqueeVertical 400s linear infinite;
+    animation: marqueeVertical 1800s linear infinite;
   }
 
   @keyframes marqueeVertical {

@@ -70,6 +70,7 @@ export const Services = () => {
       <Helmet>
         <title>Nossos Serviços Espirituais | Casa de Seu Tranca Ruas</title>
         <meta name="description" content="Conheça nossos trabalhos: Amarração Amorosa, Ebós, Limpeza Espiritual e Abertura de Caminhos. Resultados reais com a força de Tranca Ruas." />
+        <link rel="canonical" href="https://www.casadeseutrancaruas.info/servicos" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto">
