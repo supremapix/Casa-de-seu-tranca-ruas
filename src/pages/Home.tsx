@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { MessageCircle, ArrowRight, Flame, Zap, Coins, Sword, Unlock, Heart, Shield, Eye } from 'lucide-react';
-import { Helmet } from 'react-helmet';
+import { MessageCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const WHATSAPP_NUMBER = "5541996865804";
 
@@ -74,8 +74,12 @@ export const Home = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-5xl">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-gradient-gold text-4xl md:text-8xl mb-6 leading-tight drop-shadow-2xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h1 className="text-gradient-gold text-4xl md:text-8xl mb-6 leading-tight drop-shadow-2xl font-display">
               Casa de Seu Tranca Ruas
             </h1>
             <div className="h-12 md:h-16 flex items-center justify-center">

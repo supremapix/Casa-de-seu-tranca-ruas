@@ -37,6 +37,17 @@
     background-color: #FF1A1A;
     box-shadow: 0 0 10px #FF1A1A, 0 0 20px #A30000;
   }
+
+  .marquee-vertical {
+    display: flex;
+    flex-direction: column;
+    animation: marqueeVertical 400s linear infinite;
+  }
+
+  @keyframes marqueeVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
 }
 
 @layer utilities {

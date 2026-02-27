@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Shield, Globe, Star, CheckCircle2 } from 'lucide-react';
 
 export const About = () => {

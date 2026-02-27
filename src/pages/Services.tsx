@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Flame, Zap, Coins, Sword, Unlock, Heart, Shield, Eye, ArrowRight } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "5541996865804";

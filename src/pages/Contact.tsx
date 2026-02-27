@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, Clock, MessageCircle, MapPin } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "5541996865804";

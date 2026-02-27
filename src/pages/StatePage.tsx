@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { MapPin, MessageCircle, ArrowRight } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "5541996865804";
