@@ -150,11 +150,11 @@ export const CityPage = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative aspect-video rounded-xl overflow-hidden border border-gold/30 shadow-[0_0_50px_rgba(212,175,55,0.1)]"
+              className="relative aspect-[9/16] max-w-[350px] mx-auto rounded-xl overflow-hidden border border-gold/30 shadow-[0_0_50px_rgba(212,175,55,0.1)]"
             >
               <iframe 
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1&mute=1&loop=1&playlist=5qap5aO4i9A" 
+                src="https://www.youtube.com/embed/olerJm-kQsY?autoplay=1&mute=1&loop=1&playlist=olerJm-kQsY" 
                 title="A Força de Seu Tranca Ruas"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
