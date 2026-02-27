@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #050505;
+  --color-blood: #A30000;
+  --color-gold: #D4AF37;
+  --color-bone: #FFFFFF;
+  --color-muted: #CCCCCC;
+  
+  --font-display: "Cinzel Decorative", serif;
+  --font-body: "Crimson Text", serif;
+  --font-secondary: "Cinzel", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-bone font-body selection:bg-blood selection:text-white;
+    cursor: default;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(to bottom, #D4AF37, #FFFFFF, #D4AF37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .noise-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .smoke-overlay {
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(5,5,5,0.9) 100%);
+    animation: smokeFloat 25s ease-in-out infinite alternate;
+  }
+
+  @keyframes smokeFloat {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.15) translate(3%, 3%); }
+  }
+
+  .heart-beat {
+    display: inline-block;
+    animation: heartbeat 1.3s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.4); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.35); }
+    70% { transform: scale(1); }
+  }
+
+  .candle-flicker {
+    animation: flicker 3s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(0.99) skewX(0.5deg); }
+    70% { opacity: 0.95; transform: scale(1.01) skewX(-0.5deg); }
+  }
+
+  .marquee-content {
+    display: flex;
+    animation: marquee 40s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .typewriter-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    @apply text-gold ml-1;
+  }
+
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A30000;
+  border: 2px solid #050505;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: 12px;
+  height: 12px;
+  background: #D4AF37;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.05s ease-out;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+.nav-link-active {
+  @apply text-gold;
+}
+
+.nav-link-active::after {
+  content: '';
+  @apply absolute -bottom-1 left-0 w-full h-px bg-gold;
+}
