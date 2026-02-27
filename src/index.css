@@ -21,6 +21,22 @@
   h1, h2, h3, h4 {
     @apply font-display font-bold;
   }
+
+  /* Neon Red Text Effect */
+  .text-neon-red {
+    color: #FF1A1A;
+    text-shadow: 0 0 5px #FF1A1A, 0 0 10px #FF1A1A, 0 0 20px #A30000;
+  }
+
+  .hover-neon-red:hover {
+    color: #FF1A1A;
+    text-shadow: 0 0 5px #FF1A1A, 0 0 10px #FF1A1A, 0 0 20px #A30000;
+  }
+
+  .bg-neon-red {
+    background-color: #FF1A1A;
+    box-shadow: 0 0 10px #FF1A1A, 0 0 20px #A30000;
+  }
 }
 
 @layer utilities {
