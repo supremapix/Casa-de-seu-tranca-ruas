@@ -33,7 +33,7 @@ const STATES = [
     name: "Goiás e DF", 
     slug: "go-df", 
     desc: "Abertura de caminhos em Goiânia, Brasília e região.",
-    cities: ["Goiânia", "Aparecida de Goiânia", "Anápolis", "Rio Verde", "Brasília"]
+    cities: ["Goiânia", "Cidade de Goiás", "Pirenópolis", "Ceilândia", "Aruanã"]
   }
 ];
 

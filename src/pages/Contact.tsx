@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
-import { Phone, Mail, Clock, MessageCircle, MapPin } from 'lucide-react';
+import { Phone, Mail, Clock, MessageCircle, MapPin, Star } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 
 const WHATSAPP_NUMBER = "5541996865804";
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', tel: '', state: '', service: '', desc: '' });
+  const [searchParams] = useSearchParams();
+  const isReview = searchParams.get('type') === 'review';
+  const [formData, setFormData] = useState({ name: '', tel: '', state: '', service: isReview ? 'Depoimento' : '', desc: '', rating: 5 });
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `*Consulta pelo site*%0ANome: ${formData.name}%0ATelefone: ${formData.tel}%0AEstado: ${formData.state}%0AServiço: ${formData.service}%0ASituação: ${formData.desc}%0AUTM: pagina_contato`;
+    const text = isReview 
+      ? `*Novo Depoimento*%0ANome: ${formData.name}%0ATelefone: ${formData.tel}%0AAvaliação: ${formData.rating} Estrelas%0ADepoimento: ${formData.desc}`
+      : `*Consulta pelo site*%0ANome: ${formData.name}%0ATelefone: ${formData.tel}%0AEstado: ${formData.state}%0AServiço: ${formData.service}%0ASituação: ${formData.desc}`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
   };
 
@@ -77,8 +82,30 @@ export const Contact = () => {
           </div>
 
           <div className="bg-dark/50 p-8 md:p-12 border border-gold/20 rounded-sm shadow-2xl">
-            <h2 className="text-3xl text-gold mb-10 font-secondary">Envie sua Mensagem</h2>
+            <h2 className="text-3xl text-gold mb-10 font-secondary">
+              {isReview ? 'Deixe seu Depoimento' : 'Envie sua Mensagem'}
+            </h2>
             <form onSubmit={handleFormSubmit} className="space-y-8">
+              {isReview && (
+                <div className="space-y-4 mb-8">
+                  <label className="text-xs font-secondary uppercase tracking-widest text-gold">Sua Avaliação</label>
+                  <div className="flex gap-2">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        type="button"
+                        onClick={() => setFormData({ ...formData, rating: star })}
+                        className="transition-transform hover:scale-110"
+                      >
+                        <Star
+                          size={32}
+                          className={star <= formData.rating ? "fill-gold text-gold" : "text-bone/20"}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="space-y-2">
                 <label className="text-xs font-secondary uppercase tracking-widest text-gold">Seu Nome</label>
                 <input 
@@ -98,39 +125,45 @@ export const Contact = () => {
                     onChange={e => setFormData({...formData, tel: e.target.value})}
                   />
                 </div>
+                {!isReview && (
+                  <div className="space-y-2">
+                    <label className="text-xs font-secondary uppercase tracking-widest text-gold">Estado</label>
+                    <input 
+                      type="text" required
+                      className="w-full bg-dark border border-gold/20 p-5 focus:border-neon-red outline-none text-bone transition-all"
+                      placeholder="Ex: PR, SP, RJ..."
+                      value={formData.state}
+                      onChange={e => setFormData({...formData, state: e.target.value})}
+                    />
+                  </div>
+                )}
+              </div>
+              {!isReview && (
                 <div className="space-y-2">
-                  <label className="text-xs font-secondary uppercase tracking-widest text-gold">Estado</label>
-                  <input 
-                    type="text" required
-                    className="w-full bg-dark border border-gold/20 p-5 focus:border-neon-red outline-none text-bone transition-all"
-                    placeholder="Ex: PR, SP, RJ..."
-                    value={formData.state}
-                    onChange={e => setFormData({...formData, state: e.target.value})}
-                  />
+                  <label className="text-xs font-secondary uppercase tracking-widest text-gold">Assunto</label>
+                  <select 
+                    required
+                    className="w-full bg-dark border border-gold/20 p-5 focus:border-neon-red outline-none text-bone appearance-none transition-all"
+                    value={formData.service}
+                    onChange={e => setFormData({...formData, service: e.target.value})}
+                  >
+                    <option value="">Selecione um trabalho...</option>
+                    <option value="Amarração Amorosa">Amarração Amorosa</option>
+                    <option value="Ebó para Dinheiro">Ebó para Dinheiro</option>
+                    <option value="Limpeza Espiritual">Limpeza Espiritual</option>
+                    <option value="Abertura de Caminhos">Abertura de Caminhos</option>
+                    <option value="Outro">Outro Assunto</option>
+                  </select>
                 </div>
-              </div>
+              )}
               <div className="space-y-2">
-                <label className="text-xs font-secondary uppercase tracking-widest text-gold">Assunto</label>
-                <select 
-                  required
-                  className="w-full bg-dark border border-gold/20 p-5 focus:border-neon-red outline-none text-bone appearance-none transition-all"
-                  value={formData.service}
-                  onChange={e => setFormData({...formData, service: e.target.value})}
-                >
-                  <option value="">Selecione um trabalho...</option>
-                  <option value="Amarração Amorosa">Amarração Amorosa</option>
-                  <option value="Ebó para Dinheiro">Ebó para Dinheiro</option>
-                  <option value="Limpeza Espiritual">Limpeza Espiritual</option>
-                  <option value="Abertura de Caminhos">Abertura de Caminhos</option>
-                  <option value="Outro">Outro Assunto</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-secondary uppercase tracking-widest text-gold">Sua Situação</label>
+                <label className="text-xs font-secondary uppercase tracking-widest text-gold">
+                  {isReview ? 'Seu Depoimento' : 'Sua Situação'}
+                </label>
                 <textarea 
                   rows={5} required
                   className="w-full bg-dark border border-gold/20 p-5 focus:border-neon-red outline-none text-bone resize-none transition-all"
-                  placeholder="Conte brevemente o que está acontecendo..."
+                  placeholder={isReview ? "Conte como o trabalho mudou sua vida..." : "Conte brevemente o que está acontecendo..."}
                   value={formData.desc}
                   onChange={e => setFormData({...formData, desc: e.target.value})}
                 />
@@ -139,7 +172,7 @@ export const Contact = () => {
                 type="submit"
                 className="w-full bg-neon-red text-white py-6 font-secondary tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(255,26,26,0.4)] hover:brightness-125"
               >
-                📩 Enviar para Tranca Ruas
+                {isReview ? '📩 Publicar Depoimento' : '📩 Enviar para Tranca Ruas'}
               </button>
             </form>
           </div>

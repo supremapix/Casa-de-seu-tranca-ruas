@@ -14,6 +14,31 @@ const STATES_DATA: Record<string, { name: string }> = {
   "go-df": { name: "Goiás e DF" }
 };
 
+const MOCK_TESTIMONIALS = [
+  { name: "Ricardo S.", text: "Minha vida estava um caos completo. Depois da consulta em {city}, Seu Tranca Ruas abriu meus caminhos e hoje sou um novo homem.", stars: 5 },
+  { name: "Ana Paula L.", text: "Gratidão eterna! Meu marido voltou para casa em menos de uma semana. O trabalho em {city} é realmente poderoso.", stars: 5 },
+  { name: "Marcos O.", text: "Eu não acreditava mais, mas a força de Tranca Ruas me provou o contrário. Prosperidade total agora.", stars: 5 },
+  { name: "Juliana C.", text: "Atendimento impecável e resultados rápidos. Se você busca ajuda em {city}, este é o lugar certo.", stars: 5 },
+  { name: "Felipe S.", text: "A amarração amorosa mudou meu destino. Ela voltou carinhosa e focada apenas em mim. Obrigado!", stars: 5 },
+  { name: "Beatriz L.", text: "Limpeza espiritual profunda. Senti o peso saindo das minhas costas logo após o ritual em {city}.", stars: 5 },
+  { name: "Gustavo P.", text: "Justiça foi feita. Quem tentou me derrubar no trabalho em {city} acabou saindo e eu fui promovido.", stars: 5 },
+  { name: "Camila R.", text: "O melhor investimento que já fiz pela minha paz. Seu Tranca Ruas é justo e implacável.", stars: 5 },
+  { name: "Thiago S.", text: "Meus negócios em {city} estavam parados. Hoje não dou conta de tanto cliente. Axé!", stars: 5 },
+  { name: "Larissa A.", text: "Recuperei minha dignidade e meu amor. O descarrego foi a chave para minha nova vida.", stars: 5 },
+  { name: "Bruno F.", text: "Trabalho sério e com fundamento. Recomendo a todos que precisam de uma solução real em {city}.", stars: 5 },
+  { name: "Letícia G.", text: "A união de casais aqui é diferente. Sinto que o amor foi restaurado pela raiz.", stars: 5 },
+  { name: "André R.", text: "Proteção total. Inveja nenhuma me pega mais depois do patuá de Seu Tranca Ruas.", stars: 5 },
+  { name: "Fernanda C.", text: "Estava sofrendo por um ex que nem me olhava. Hoje ele não para de me mandar mensagem.", stars: 5 },
+  { name: "Lucas M.", text: "Abertura de caminhos imediata. Consegui o emprego dos meus sonhos em {city} em 3 dias.", stars: 5 },
+  { name: "Mariana R.", text: "Sempre fui cética, mas os resultados em {city} me deixaram sem palavras. É real.", stars: 5 },
+  { name: "Gabriel C.", text: "Obrigado por me tirar do fundo do poço. A força de Tranca Ruas é a luz no fim do túnel.", stars: 5 },
+  { name: "Amanda B.", text: "Fidelidade e paixão. Meu relacionamento nunca esteve tão sólido e feliz.", stars: 5 },
+  { name: "Rafael X.", text: "Afastamento de rivais que funciona de verdade. Minha paz voltou.", stars: 5 },
+  { name: "Vanessa M.", text: "Consulta reveladora. Soube de coisas que ninguém sabia e recebi o guia correto.", stars: 5 },
+  { name: "Rodrigo T.", text: "Ebó de prosperidade que traz fartura. Minha mesa nunca mais ficou vazia.", stars: 5 },
+  { name: "Patrícia K.", text: "Seu Tranca Ruas das Almas é o dono da minha fé. Gratidão por tudo em {city}.", stars: 5 }
+];
+
 export const CityPage = () => {
   const { stateSlug, citySlug } = useParams();
   const state = STATES_DATA[stateSlug || ""];
@@ -28,7 +53,7 @@ export const CityPage = () => {
     "description": `Amarração amorosa poderosa e trabalhos espirituais em ${city}, ${state.name}. Traga seu amor de volta com a força de Tranca Ruas das Almas.`,
     "url": window.location.href,
     "telephone": "+5541996865804",
-    "image": "https://www.casadeseutrancaruas.info/og-image.jpg",
+    "image": "https://filhodeogum.com/imagens/casa-de-seu-tranca-ruas.png",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": city,
@@ -92,7 +117,10 @@ export const CityPage = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative py-32 px-4 border-b border-gold/10">
+      <section className="relative py-32 px-4 border-b border-gold/10 overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none">
+          <img src="https://filhodeogum.com/imagens/tranca-rua.png" alt="" className="w-full h-full object-contain object-right" />
+        </div>
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex items-center justify-center gap-2 text-neon-red mb-6 font-secondary tracking-widest uppercase">
@@ -114,8 +142,62 @@ export const CityPage = () => {
         </div>
       </section>
 
+      {/* Video Highlight Section */}
+      <section className="py-24 px-4 bg-dark/40 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-video rounded-xl overflow-hidden border border-gold/30 shadow-[0_0_50px_rgba(212,175,55,0.1)]"
+            >
+              <iframe 
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1&mute=1&loop=1&playlist=5qap5aO4i9A" 
+                title="A Força de Seu Tranca Ruas"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-dark/80 to-transparent" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-5xl text-gold mb-6 font-display">A Chave que Abre Seus Caminhos em {city}</h2>
+              <p className="text-bone/70 text-lg mb-8 leading-relaxed">
+                Assista e sinta a energia que move nossa casa. Seu Tranca Ruas não apenas promete, ele executa. Em {city}, centenas de pessoas já tiveram suas vidas transformadas através dos nossos rituais sagrados.
+              </p>
+              <div className="space-y-4 mb-10">
+                <div className="flex items-center gap-3 text-gold">
+                  <CheckCircle2 className="text-neon-red" /> Atendimento 100% Sigiloso
+                </div>
+                <div className="flex items-center gap-3 text-gold">
+                  <CheckCircle2 className="text-neon-red" /> Resultados em até 24 Horas
+                </div>
+                <div className="flex items-center gap-3 text-gold">
+                  <CheckCircle2 className="text-neon-red" /> Fundamento Real de Quimbanda
+                </div>
+              </div>
+              <a 
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Quero+mudar+minha+vida+em+${city}`}
+                className="inline-block bg-neon-red text-white px-12 py-5 rounded-sm font-secondary tracking-widest hover:brightness-125 transition-all shadow-[0_0_25px_rgba(255,26,26,0.4)]"
+              >
+                Agendar Consulta Agora
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Content Section */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 relative">
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/2 opacity-10 pointer-events-none">
+          <img src="https://filhodeogum.com/imagens/casa-de-seu-tranca-rua.png" alt="" className="w-full h-full object-contain object-left" />
+        </div>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <div>
             <h2 className="text-3xl md:text-5xl text-gold mb-8 font-display">Como funciona o trabalho em {city}?</h2>
@@ -142,18 +224,15 @@ export const CityPage = () => {
           </div>
           <div className="relative">
             <div className="absolute -inset-4 bg-gold/10 blur-3xl rounded-full" />
-            <div className="relative bg-dark/50 border border-gold/20 p-8 rounded-sm">
+            <div className="relative bg-dark/50 border border-gold/20 p-8 rounded-sm max-h-[600px] overflow-y-auto custom-scrollbar">
               <h3 className="text-2xl text-gold mb-6 font-secondary text-center">Depoimentos em {state.name}</h3>
               <div className="space-y-6">
-                {[
-                  { name: "Maria S.", text: "Fiz a amarração aqui em Porto Alegre e meu marido voltou em 3 dias. Recomendo muito!", stars: 5 },
-                  { name: "João P.", text: "O trabalho de caminhos financeiros mudou minha vida. Só tenho a agradecer.", stars: 5 }
-                ].map((t, i) => (
+                {MOCK_TESTIMONIALS.map((t, i) => (
                   <div key={i} className="border-b border-gold/10 pb-6 last:border-0">
                     <div className="flex gap-1 mb-2">
                       {[...Array(t.stars)].map((_, s) => <Star key={s} size={14} className="fill-gold text-gold" />)}
                     </div>
-                    <p className="text-bone/70 italic mb-2">"{t.text}"</p>
+                    <p className="text-bone/70 italic mb-2">"{t.text.replace('{city}', city)}"</p>
                     <p className="text-gold text-sm font-secondary">- {t.name}</p>
                   </div>
                 ))}

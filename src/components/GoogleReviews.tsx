@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { Star, CheckCircle2, ThumbsUp, Share2, Shield } from 'lucide-react';
 
 const GOOGLE_LOGO = "https://img.freepik.com/vetores-premium/icone-do-logotipo-do-google-em-fundo-transparente_1273375-1570.jpg?semt=ais_related_payload_trends&w=740&q=80";
@@ -61,9 +62,12 @@ export const GoogleReviews = () => {
             </div>
           </div>
           <div className="flex flex-col items-center gap-5">
-            <button className="w-full md:w-auto bg-white text-black px-12 py-5 rounded-full font-bold text-lg hover:bg-gold transition-all shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-gold/20 hover:scale-105 active:scale-95">
+            <Link 
+              to="/contato?type=review"
+              className="w-full md:w-auto bg-white text-black px-12 py-5 rounded-full font-bold text-lg hover:bg-gold transition-all shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-gold/20 hover:scale-105 active:scale-95 text-center"
+            >
               Deixe seu depoimento
-            </button>
+            </Link>
             <div className="flex items-center gap-2 text-[10px] text-bone/30 uppercase tracking-[0.3em]">
               <Shield size={12} className="text-emerald-500" />
               Privacidade 100% Garantida
