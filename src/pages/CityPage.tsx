@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import { EnhancedSEO } from '../components/EnhancedSEO';
 import { MapPin, MessageCircle, Star, Shield, CheckCircle2 } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "5541996865804";
@@ -107,14 +107,12 @@ export const CityPage = () => {
 
   return (
     <div className="bg-dark min-h-screen">
-      <Helmet>
-        <title>Amarração Amorosa em {city} - {state.name} | Casa de Seu Tranca Ruas</title>
-        <meta name="description" content={`Procurando amarração amorosa em ${city}? A Casa de Seu Tranca Ruas realiza trabalhos espirituais poderosos para trazer o ex de volta e abrir caminhos em ${city}, ${state.name}.`} />
-        <link rel="canonical" href={`https://www.casadeseutrancaruas.info/estados/${stateSlug}/${citySlug}`} />
-        <script type="application/ld+json">
-          {JSON.stringify(schemaData)}
-        </script>
-      </Helmet>
+      <EnhancedSEO 
+        title={`Amarração Amorosa em ${city} - ${state.name} | Casa de Seu Tranca Ruas`}
+        description={`Procurando amarração amorosa em ${city}? A Casa de Seu Tranca Ruas realiza trabalhos espirituais poderosos para trazer o ex de volta e abrir caminhos em ${city}, ${state.name}.`}
+        canonical={`/estados/${stateSlug}/${citySlug}`}
+        schemaData={schemaData}
+      />
 
       {/* Hero */}
       <section className="relative py-32 px-4 border-b border-gold/10 overflow-hidden">

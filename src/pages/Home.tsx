@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import { EnhancedSEO } from '../components/EnhancedSEO';
 
 const WHATSAPP_NUMBER = "5541996865804";
 
@@ -55,13 +55,33 @@ const Typewriter = ({ texts }: { texts: string[] }) => {
 };
 
 export const Home = () => {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Casa de Seu Tranca Ruas",
+    "description": "A Casa de Seu Tranca Ruas oferece amarração amorosa poderosa, ebós para dinheiro e limpeza espiritual. Resultados garantidos e sigilo total.",
+    "url": "https://www.casadeseutrancaruas.info/",
+    "telephone": "+5541996865804",
+    "image": "https://filhodeogum.com/imagens/casa-de-seu-tranca-ruas.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BR"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "205"
+    }
+  };
+
   return (
     <>
-      <Helmet>
-        <title>Casa de Seu Tranca Ruas | Amarração Amorosa e Trabalho Espiritual</title>
-        <meta name="description" content="A Casa de Seu Tranca Ruas oferece amarração amorosa poderosa, ebós para dinheiro e limpeza espiritual. Resultados garantidos e sigilo total." />
-        <link rel="canonical" href="https://www.casadeseutrancaruas.info/" />
-      </Helmet>
+      <EnhancedSEO 
+        title="Casa de Seu Tranca Ruas | Amarração Amorosa e Trabalho Espiritual"
+        description="A Casa de Seu Tranca Ruas oferece amarração amorosa poderosa, ebós para dinheiro e limpeza espiritual. Resultados garantidos e sigilo total."
+        canonical="/"
+        schemaData={schemaData}
+      />
 
       {/* --- Hero Section --- */}
       <section className="relative h-screen flex items-center justify-center">

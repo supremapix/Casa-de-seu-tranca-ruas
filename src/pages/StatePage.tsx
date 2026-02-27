@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import { EnhancedSEO } from '../components/EnhancedSEO';
 import { MapPin, MessageCircle, ArrowRight } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "5541996865804";
@@ -86,14 +86,12 @@ export const StatePage = () => {
 
   return (
     <div className="bg-dark min-h-screen py-20 px-4">
-      <Helmet>
-        <title>Amarração Amorosa em {state.name} | Casa de Seu Tranca Ruas</title>
-        <meta name="description" content={`Trabalhos espirituais e amarração amorosa em todo o estado de ${state.name}. Atendimento em Porto Alegre, Salvador, Rio de Janeiro e mais.`} />
-        <link rel="canonical" href={`https://www.casadeseutrancaruas.info/estados/${stateSlug}`} />
-        <script type="application/ld+json">
-          {JSON.stringify(schemaData)}
-        </script>
-      </Helmet>
+      <EnhancedSEO 
+        title={`Amarração Amorosa em ${state.name} | Casa de Seu Tranca Ruas`}
+        description={`Trabalhos espirituais e amarração amorosa em todo o estado de ${state.name}. Atendimento em Porto Alegre, Salvador, Rio de Janeiro e mais.`}
+        canonical={`/estados/${stateSlug}`}
+        schemaData={schemaData}
+      />
 
       <div className="max-w-7xl mx-auto">
         <motion.div 
