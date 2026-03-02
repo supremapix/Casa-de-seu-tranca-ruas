@@ -10,6 +10,7 @@ import { CityPage } from './pages/CityPage';
 import { NeighborhoodPage } from './pages/NeighborhoodPage';
 import { Contact } from './pages/Contact';
 import { Sitemap } from './pages/Sitemap';
+import { NotFound } from './pages/NotFound';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/estados/:stateSlug/:citySlug" element={<CityPage />} />
           <Route path="/contato" element={<Contact />} />
           <Route path="/mapa-do-site" element={<Sitemap />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </Router>
