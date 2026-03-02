@@ -1,9 +1,31 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { MessageCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { MessageCircle, X, MapPin, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { EnhancedSEO } from '../components/EnhancedSEO';
 
 const WHATSAPP_NUMBER = "5541996865804";
+
+const MARQUEE_ITEMS = [
+  { name: "Vila Parolin", slug: "vila-parolin" },
+  { name: "Vila Torres", slug: "vila-torres" },
+  { name: "Água Verde", slug: "agua-verde" },
+  { name: "Batel", slug: "batel" },
+  { name: "CIC", slug: "cic" },
+  { name: "Pinheirinho", slug: "pinheirinho" },
+  { name: "Sítio Cercado", slug: "sitio-cercado" },
+  { name: "Boqueirão", slug: "boqueirao" },
+  { name: "Santa Felicidade", slug: "santa-felicidade" },
+  { name: "Colombo", slug: "colombo" },
+  { name: "São José dos Pinhais", slug: "sao-jose-dos-pinhais" },
+  { name: "Araucária", slug: "araucaria" },
+  { name: "Pinhais", slug: "pinhais" },
+  { name: "Fazenda Rio Grande", slug: "fazenda-rio-grande" },
+  { name: "Campo Largo", slug: "campo-largo" },
+  { name: "Almirante Tamandaré", slug: "almirante-tamandare" },
+  { name: "Piraquara", slug: "piraquara" },
+  { name: "Campina Grande do Sul", slug: "campina-grande-do-sul" },
+];
 
 const PERSUASIVE_TEXTS = [
   "Amarração Amorosa Poderosa e Definitiva",
@@ -55,6 +77,8 @@ const Typewriter = ({ texts }: { texts: string[] }) => {
 };
 
 export const Home = () => {
+  const [selectedLocation, setSelectedLocation] = useState<{name: string, slug: string} | null>(null);
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -130,15 +154,76 @@ export const Home = () => {
       </section>
 
       {/* Marquee Strip */}
-      <div className="bg-blood/10 border-y border-gold/20 py-4 overflow-hidden relative z-20">
-        <div className="marquee-content whitespace-nowrap">
-          {[...Array(10)].map((_, i) => (
-            <span key={i} className="text-gold font-secondary text-sm uppercase tracking-[0.3em] mx-8">
-              Amarração Amorosa • Ebó para Dinheiro • Limpeza Espiritual • Proteção de Tranca Ruas • Volta do Ex Urgente • 
-            </span>
+      <div className="bg-blood/10 border-y border-gold/20 py-8 overflow-hidden relative z-20">
+        <div className="flex marquee-track">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="flex shrink-0">
+              {MARQUEE_ITEMS.map((item) => (
+                <button
+                  key={item.slug}
+                  onClick={() => setSelectedLocation(item)}
+                  className="text-gold font-secondary text-lg uppercase tracking-[0.2em] mx-12 hover:text-neon-red transition-colors flex items-center gap-3 whitespace-nowrap"
+                >
+                  <MapPin size={18} className="text-neon-red" /> {item.name}
+                </button>
+              ))}
+            </div>
           ))}
         </div>
       </div>
+
+      {/* Location Popup */}
+      <AnimatePresence>
+        {selectedLocation && (
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedLocation(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative bg-dark border border-gold/30 p-8 md:p-12 rounded-sm max-w-lg w-full shadow-[0_0_50px_rgba(212,175,55,0.2)]"
+            >
+              <button 
+                onClick={() => setSelectedLocation(null)}
+                className="absolute top-4 right-4 text-gold hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+              
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-gold/20">
+                  <MapPin size={40} className="text-neon-red" />
+                </div>
+                <h2 className="text-3xl text-gold mb-4 font-display">Atendimento em {selectedLocation.name}</h2>
+                <p className="text-bone/70 text-lg mb-8 leading-relaxed">
+                  A Casa de Seu Tranca Ruas possui forte atuação em {selectedLocation.name}, trazendo resultados reais em amarração amorosa e abertura de caminhos para moradores desta região.
+                </p>
+                
+                <div className="flex flex-col gap-4">
+                  <Link 
+                    to={selectedLocation.slug.includes('-') && !['araucaria', 'pinhais', 'colombo', 'piraquara'].includes(selectedLocation.slug) ? `/estados/pr/curitiba/${selectedLocation.slug}` : `/estados/pr/${selectedLocation.slug}`}
+                    className="bg-neon-red text-white py-4 rounded-sm font-secondary tracking-widest flex items-center justify-center gap-2 hover:brightness-125 transition-all"
+                  >
+                    Ver Página Completa <ArrowRight size={18} />
+                  </Link>
+                  <a 
+                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=Vim+pelo+site+-+Atendimento+em+${selectedLocation.name}`}
+                    className="border border-gold text-gold py-4 rounded-sm font-secondary tracking-widest hover:bg-gold hover:text-dark transition-all"
+                  >
+                    Falar com Especialista
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
+import { Menu, X, MessageCircle, ChevronDown, Phone, Mail, ArrowUp } from 'lucide-react';
 import { GoogleReviews } from './GoogleReviews';
 import { VideoSection } from './VideoSection';
 
@@ -67,7 +67,20 @@ const FAQSection = () => {
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 500);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const navItems = [
     { name: 'Início', path: '/' },
@@ -220,19 +233,51 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
               alt="Suprema Mídia" 
               className="h-12 grayscale brightness-200"
             />
-            <p className="text-bone/40 text-sm">
-              Desenvolvido <span className="heart-beat">❤️</span> por <a href="https://supremasite.com.br" target="_blank" rel="noopener" className="text-gold hover:underline">Suprema Sites Express</a>
+            <p className="text-bone/40 text-sm flex items-center gap-2">
+              Desenvolvido <span className="text-4xl animate-pulse">❤️</span> por <a href="https://supremasite.com.br" target="_blank" rel="noopener" className="text-gold hover:underline">Suprema Mídia</a>
             </p>
           </div>
         </div>
       </motion.footer>
 
-      {/* --- Floating WhatsApp --- */}
-      <div className="fixed bottom-8 right-8 z-[100]">
+      {/* --- Floating Actions --- */}
+      <div className="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
+        <AnimatePresence>
+          {showBackToTop && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              onClick={scrollToTop}
+              className="w-12 h-12 bg-gold/20 backdrop-blur-md border border-gold/50 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all shadow-xl"
+              title="Voltar ao Topo"
+            >
+              <ArrowUp size={24} />
+            </motion.button>
+          )}
+        </AnimatePresence>
+
+        <a 
+          href="tel:+5541996865804"
+          className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-transform"
+          title="Ligar Agora"
+        >
+          <Phone size={24} />
+        </a>
+
+        <a 
+          href="mailto:supremamidiabatel@gmail.com"
+          className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-transform"
+          title="Enviar E-mail"
+        >
+          <Mail size={24} />
+        </a>
+
         <a 
           href={`https://wa.me/${WHATSAPP_NUMBER}?text=Vim+pelo+site+-+Botão+Flutuante`}
           target="_blank" rel="noopener"
           className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-transform relative"
+          title="WhatsApp"
         >
           <MessageCircle size={32} />
           <span className="absolute -top-1 -right-1 w-6 h-6 bg-neon-red rounded-full flex items-center justify-center text-[10px] font-bold animate-pulse shadow-[0_0_10px_#FF1A1A]">1</span>

@@ -11,7 +11,8 @@ const STATES_DATA: Record<string, { name: string }> = {
   "ba": { name: "Bahia" },
   "rj": { name: "Rio de Janeiro" },
   "ma": { name: "Maranhão" },
-  "go-df": { name: "Goiás e DF" }
+  "go-df": { name: "Goiás e DF" },
+  "pr": { name: "Paraná" }
 };
 
 const MOCK_TESTIMONIALS = [
@@ -105,6 +106,97 @@ export const CityPage = () => {
     }
   };
 
+  const sections = [
+    {
+      title: `Amarração Amorosa em ${city}`,
+      text: `Se você mora em ${city} e está passando por momentos difíceis no relacionamento, saiba que a Casa de Seu Tranca Ruas é especialista em trazer a felicidade de volta. A amarração amorosa realizada com os fundamentos de Seu Tranca Ruas das Almas é reconhecida por sua eficácia e rapidez em toda a região de ${state.name}. Atendemos moradores de ${city} com total sigilo e dedicação, garantindo que o seu caso seja tratado com a seriedade que merece. A força de Exu Tranca Ruas é capaz de quebrar as barreiras que impedem o seu amor de florescer, trazendo a pessoa amada de volta com domínio, paixão e fidelidade absoluta. Não importa quão difícil pareça a situação em ${city}, nossa amarração é definitiva e poderosa.`
+    },
+    {
+      title: `Trabalhos Espirituais em ${city}`,
+      text: `Nossa casa espiritual tem forte atuação em ${city}, oferecendo desde consultas de búzios e cartas até rituais complexos de limpeza e abertura de caminhos. Se você sente que sua vida está travada ou que energias negativas estão atrapalhando seu progresso em ${city}, venha fazer uma consulta e descobrir como as entidades podem te ajudar. A cidade de ${city} é um polo de grande energia, e nossos rituais são adaptados para as necessidades específicas de quem vive aqui. Seja para problemas de saúde, financeiros ou familiares, temos o fundamento necessário para te guiar rumo à vitória e à paz de espírito que você tanto busca em ${state.name}.`
+    },
+    {
+      title: `A Força de Seu Tranca Ruas em ${state.name}`,
+      text: `Seu Tranca Ruas das Almas é o senhor dos caminhos, aquele que abre as portas fechadas e protege seus filhos contra as demandas. Em ${city}, realizamos trabalhos específicos para proteção contra inveja, olho gordo e feitiçarias que podem estar minando sua felicidade. Não deixe que o mal te alcance, fortaleça seu axé com quem realmente conhece a quimbanda e tem anos de experiência atendendo a comunidade de ${city}. Nossa linhagem é direta e nossos rituais possuem a força ancestral necessária para resolver os problemas mais complexos que afligem os moradores de ${state.name}.`
+    },
+    {
+      title: `Ebó para Dinheiro e Prosperidade em ${city}`,
+      text: `Muitos comerciantes e moradores de ${city} buscam nossa ajuda para prosperar financeiramente. O ebó para dinheiro é um ritual sagrado que remove as travas da sua vida econômica, atraindo clientes, oportunidades e fartura para o seu lar ou negócio em ${city}. Se o dinheiro entra e sai sem você ver, ou se as dívidas estão acumulando em ${state.name}, é hora de agir espiritualmente e pedir a intercessão de quem domina as encruzilhadas do sucesso. A prosperidade é um fluxo de energia, e nós sabemos como desbloquear esse fluxo para que você nunca mais passe por necessidades em ${city}.`
+    },
+    {
+      title: `União de Casais e Volta do Ex em ${city}`,
+      text: `O sofrimento por amor é um dos mais dolorosos que o ser humano pode enfrentar. Na Casa de Seu Tranca Ruas, entendemos a dor de quem perdeu a pessoa amada em ${city}. Nossos rituais de união de casais são feitos para restaurar o carinho, o desejo e a cumplicidade que foram perdidos. Traga seu amor de volta hoje mesmo em ${city}, sem humilhações e com resultados reais que podem ser sentidos em poucos dias. Se você está em ${city} e não aguenta mais a solidão, permita que a força de Tranca Ruas refaça os laços que o destino ou a inveja tentaram separar em ${state.name}.`
+    },
+    {
+      title: `Limpeza Espiritual Profunda em ${city}`,
+      text: `Sente o ambiente da sua casa ou trabalho em ${city} pesado? A limpeza espiritual é essencial para remover larvas astrais e energias de baixa vibração que se acumulam com o tempo. Com ervas sagradas, defumações e a força de Exu, purificamos sua vida em ${city} para que você possa caminhar com leveza e clareza mental. Uma alma limpa atrai coisas boas, e moradores de ${city} sabem que um descarrego bem feito é o primeiro passo para qualquer conquista duraduram em ${state.name}.`
+    },
+    {
+      title: `Afastamento de Rivais em ${city}`,
+      text: `Tem alguém atrapalhando sua vida em ${city}? Seja no amor ou no trabalho, o afastamento de rivais é um trabalho justo para quem busca paz e tranquilidade. Não permitimos que pessoas mal-intencionadas destruam o que você construiu com tanto esforço em ${city}. Seu Tranca Ruas coloca cada um no seu devido lugar, neutralizando as ações de quem quer te ver cair em ${state.name}. Proteja sua felicidade e sua família contra aqueles que agem nas sombras em ${city}.`
+    },
+    {
+      title: `Consulta Espiritual Online para ${city}`,
+      text: `Atendemos moradores de ${city} de forma personalizada e discreta. Você pode agendar sua consulta pelo WhatsApp e receber as orientações necessárias para resolver seus problemas sem precisar se deslocar. A espiritualidade não tem fronteiras, e a força de Tranca Ruas chega onde você estiver em ${city}. Nossas consultas revelam a verdade e apontam o caminho exato para a sua superação em ${state.name}, seja através de búzios, cartas ou vidência direta.`
+    },
+    {
+      title: `Pacto de Riqueza e Sucesso em ${city}`,
+      text: `Para quem busca grandes transformações e não se contenta com o pouco, o pacto de riqueza é um compromisso sério com a prosperidade. Em ${city}, orientamos aqueles que desejam subir de patamar na vida, sempre com respeito e fundamento espiritual. O sucesso é um direito de quem tem coragem de buscar e sabe que a força de Exu é o motor que impulsiona as grandes conquistas materiais em ${city} e em todo o ${state.name}.`
+    },
+    {
+      title: `Proteção para Comércios em ${city}`,
+      text: `Seu negócio em ${city} está sofrendo com inveja ou queda repentina de vendas? Protegemos estabelecimentos comerciais com assentamentos e rituais de blindagem espiritual. Garanta que as portas do seu sucesso em ${city} permaneçam abertas e que a energia do dinheiro flua livremente, afastando qualquer demanda que possa ter sido enviada por concorrentes ou pessoas invejosas em ${state.name}.`
+    },
+    {
+      title: `Tratamento de Vícios e Depressão Espiritual`,
+      text: `Muitas vezes, problemas que parecem apenas psicológicos têm raízes espirituais profundas. Em ${city}, auxiliamos no tratamento espiritual de obsessões que causam desânimo, tristeza profunda e vícios. A força de Exu traz a vitalidade e a vontade de viver de volta para quem se sente perdido em ${city}. Recupere sua alegria e sua força vital com a ajuda de quem entende os mistérios da alma humana atendendo em ${state.name}.`
+    },
+    {
+      title: `Abertura de Caminhos Amorosos em ${city}`,
+      text: `Se você está solteiro(a) e não consegue encontrar ninguém especial em ${city}, ou se seus relacionamentos não duram, pode haver um bloqueio energético. A abertura de caminhos amorosos te torna mais atraente e magnético(a), atraindo pessoas compatíveis com sua felicidade e removendo as amarras que te impedem de ser amado(a) em ${city} e região.`
+    },
+    {
+      title: `Justiça de Xangô e Força de Exu em ${city}`,
+      text: `Problemas na justiça ou injustiças no trabalho em ${city}? Trabalhamos com a linha de justiça para que a verdade prevaleça em sua vida. Seu Tranca Ruas é o guardião da ordem e não aceita que seus protegidos sejam injustiçados. Se você está em ${city} e precisa de uma solução para causas impossíveis, conte com a força de quem domina as leis do mundo espiritual em ${state.name}.`
+    },
+    {
+      title: `Desenvolvimento Mediúnico em ${city}`,
+      text: `Para quem sente o chamado da espiritualidade em ${city}, oferecemos orientação segura e desenvolvimento mediúnico. Entender sua mediunidade é o primeiro passo para o equilíbrio emocional e espiritual. Venha conversar com quem tem décadas de experiência atendendo a comunidade de ${city} e saiba como canalizar sua força para o bem em ${state.name}.`
+    },
+    {
+      title: `Rituais de Sedução e Domínio em ${city}`,
+      text: `Quer ter o controle da situação amorosa em ${city}? Nossos rituais de sedução aumentam seu poder pessoal e seu brilho. Seja notado(a) e desejado(a) por quem você quer, com a ajuda das Pombagiras e Exus que regem a paixão. Domine seus caminhos afetivos em ${city} com a sabedoria ancestral da quimbanda.`
+    },
+    {
+      title: `Descarrego de Ambientes em ${city}`,
+      text: `Brigas constantes e desentendimentos em casa em ${city}? Isso pode ser energia negativa acumulada. O descarrego de ambientes remove as discórdias e traz a harmonia familiar de volta para seu lar em ${city}. Um lar abençoado é a base para o sucesso em todas as outras áreas da vida em ${state.name}.`
+    },
+    {
+      title: `Trabalhos para Concursos e Empregos em ${city}`,
+      text: `Buscando estabilidade e crescimento em ${city}? Fazemos trabalhos para clareza mental em provas de concursos e abertura de portas em empresas de ${city}. O conhecimento aliado à força espiritual de Seu Tranca Ruas é uma combinação imbatível para quem quer vencer profissionalmente em ${state.name}.`
+    },
+    {
+      title: `Blindagem Espiritual de Veículos em ${city}`,
+      text: `Proteja seu carro, moto ou caminhão em ${city} contra acidentes, roubos e inveja. Realizamos rituais de consagração que criam um escudo protetor em seus bens materiais, garantindo que suas viagens por ${city} e região sejam sempre seguras e sob a guarda do Senhor das Encruzilhadas.`
+    },
+    {
+      title: `Cura Espiritual e Energização em ${city}`,
+      text: `Recupere suas energias e sua disposição em ${city}. Nossos rituais de passes e energização restauram o corpo e a alma, trazendo vigor e saúde para enfrentar os desafios do dia a dia em ${city}. Sinta a força da terra e do axé renovando suas células e sua mente em ${state.name}.`
+    },
+    {
+      title: `Patuás e Amuletos Consagrados em ${city}`,
+      text: `Leve a proteção de Seu Tranca Ruas sempre com você em ${city}. Confeccionamos patuás personalizados para amor, dinheiro, saúde e proteção, carregados com o axé da nossa casa e preparados especificamente para a sua vibração. Moradores de ${city} confiam em nossos amuletos há gerações.`
+    },
+    {
+      title: `O Mistério das Encruzilhadas em ${city}`,
+      text: `Entenda por que a encruzilhada é o ponto de maior poder e mistério. Em ${city}, ensinamos como respeitar e utilizar essa energia sagrada para o seu benefício, sempre com a guia de um mestre experiente que conhece os segredos de Seu Tranca Ruas das Almas em ${state.name}.`
+    },
+    {
+      title: `Gratidão e Resultados em ${city}`,
+      text: `Nossa maior recompensa é ver o sorriso e a paz de quem teve seu problema resolvido em ${city}. Milhares de depoimentos e histórias de sucesso comprovam que a Casa de Seu Tranca Ruas é a referência absoluta em ${state.name} para quem busca resultados de verdade na espiritualidade.`
+    }
+  ];
+
   return (
     <div className="bg-dark min-h-screen">
       <EnhancedSEO 
@@ -191,50 +283,52 @@ export const CityPage = () => {
         </div>
       </section>
 
-      {/* Content Section */}
+      {/* Content Sections */}
       <section className="py-24 px-4 relative">
         <div className="absolute bottom-0 left-0 w-1/4 h-1/2 opacity-10 pointer-events-none">
           <img src="https://filhodeogum.com/imagens/casa-de-seu-tranca-rua.png" alt="" className="w-full h-full object-contain object-left" />
         </div>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 className="text-3xl md:text-5xl text-gold mb-8 font-display">Como funciona o trabalho em {city}?</h2>
-            <div className="space-y-6 text-bone/80 text-lg leading-relaxed">
-              <p>
-                Muitas pessoas em <strong>{city}</strong> sofrem com caminhos fechados no amor e nas finanças. O trabalho espiritual de Seu Tranca Ruas é focado em remover obstáculos e trazer a pessoa amada de volta com domínio e paixão.
-              </p>
-              <p>
-                Atendemos toda a região de {city} com sigilo absoluto. Nossos ebós e amarrações são feitos com fundamentos reais da quimbanda, garantindo que o seu pedido seja ouvido e atendido pelas entidades de luz e força.
-              </p>
-              <ul className="space-y-4 mt-8">
-                {[
-                  "Amarração Amorosa Definitiva",
-                  "Abertura de Caminhos Financeiros",
-                  "Limpeza Espiritual de Ambientes",
-                  "Afastamento de Rivais e Inveja"
-                ].map(item => (
-                  <li key={item} className="flex items-center gap-3 text-gold">
-                    <CheckCircle2 size={20} className="text-neon-red" /> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gold/10 blur-3xl rounded-full" />
-            <div className="relative bg-dark/50 border border-gold/20 p-8 rounded-sm max-h-[600px] overflow-y-auto custom-scrollbar">
-              <h3 className="text-2xl text-gold mb-6 font-secondary text-center">Depoimentos em {state.name}</h3>
-              <div className="space-y-6">
-                {MOCK_TESTIMONIALS.map((t, i) => (
-                  <div key={i} className="border-b border-gold/10 pb-6 last:border-0">
-                    <div className="flex gap-1 mb-2">
-                      {[...Array(t.stars)].map((_, s) => <Star key={s} size={14} className="fill-gold text-gold" />)}
-                    </div>
-                    <p className="text-bone/70 italic mb-2">"{t.text.replace('{city}', city)}"</p>
-                    <p className="text-gold text-sm font-secondary">- {t.name}</p>
+        <div className="max-w-4xl mx-auto space-y-20">
+          {sections.map((section, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-dark/50 p-8 border border-gold/10 rounded-sm"
+            >
+              <h2 className="text-2xl md:text-3xl text-gold mb-6 font-display">{section.title}</h2>
+              <p className="text-bone/80 text-lg leading-relaxed">{section.text}</p>
+              {index % 3 === 0 && (
+                <div className="mt-8">
+                  <img 
+                    src="https://filhodeogum.com/imagens/casa-de-seu-tranca-ruas.png" 
+                    alt={section.title} 
+                    className="w-full h-64 object-cover rounded-sm border border-gold/20 opacity-60"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 px-4 bg-dark/60">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative bg-dark/50 border border-gold/20 p-8 rounded-sm">
+            <h3 className="text-2xl text-gold mb-6 font-secondary text-center">Depoimentos em {state.name}</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {MOCK_TESTIMONIALS.map((t, i) => (
+                <div key={i} className="border-b border-gold/10 pb-6 last:border-0">
+                  <div className="flex gap-1 mb-2">
+                    {[...Array(t.stars)].map((_, s) => <Star key={s} size={14} className="fill-gold text-gold" />)}
                   </div>
-                ))}
-              </div>
+                  <p className="text-bone/70 italic mb-2">"{t.text.replace('{city}', city)}"</p>
+                  <p className="text-gold text-sm font-secondary">- {t.name}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

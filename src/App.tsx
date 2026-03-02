@@ -7,6 +7,7 @@ import { About } from './pages/About';
 import { States } from './pages/States';
 import { StatePage } from './pages/StatePage';
 import { CityPage } from './pages/CityPage';
+import { NeighborhoodPage } from './pages/NeighborhoodPage';
 import { Contact } from './pages/Contact';
 import { Sitemap } from './pages/Sitemap';
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/sobre" element={<About />} />
           <Route path="/estados" element={<States />} />
           <Route path="/estados/:stateSlug" element={<StatePage />} />
+          <Route path="/estados/pr/curitiba/:neighborhoodSlug" element={<NeighborhoodPage />} />
           <Route path="/estados/:stateSlug/:citySlug" element={<CityPage />} />
           <Route path="/contato" element={<Contact />} />
           <Route path="/mapa-do-site" element={<Sitemap />} />
