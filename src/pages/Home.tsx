@@ -7,24 +7,30 @@ import { EnhancedSEO } from '../components/EnhancedSEO';
 const WHATSAPP_NUMBER = "5541996865804";
 
 const MARQUEE_ITEMS = [
-  { name: "Vila Parolin", slug: "vila-parolin" },
-  { name: "Vila Torres", slug: "vila-torres" },
-  { name: "Água Verde", slug: "agua-verde" },
-  { name: "Batel", slug: "batel" },
-  { name: "CIC", slug: "cic" },
-  { name: "Pinheirinho", slug: "pinheirinho" },
-  { name: "Sítio Cercado", slug: "sitio-cercado" },
-  { name: "Boqueirão", slug: "boqueirao" },
-  { name: "Santa Felicidade", slug: "santa-felicidade" },
-  { name: "Colombo", slug: "colombo" },
-  { name: "São José dos Pinhais", slug: "sao-jose-dos-pinhais" },
-  { name: "Araucária", slug: "araucaria" },
-  { name: "Pinhais", slug: "pinhais" },
-  { name: "Fazenda Rio Grande", slug: "fazenda-rio-grande" },
-  { name: "Campo Largo", slug: "campo-largo" },
-  { name: "Almirante Tamandaré", slug: "almirante-tamandare" },
-  { name: "Piraquara", slug: "piraquara" },
-  { name: "Campina Grande do Sul", slug: "campina-grande-do-sul" },
+  { name: "Vila Parolin", path: "/estados/pr/curitiba/vila-parolin" },
+  { name: "Vila Torres", path: "/estados/pr/curitiba/vila-torres" },
+  { name: "Água Verde", path: "/estados/pr/curitiba/agua-verde" },
+  { name: "Batel", path: "/estados/pr/curitiba/batel" },
+  { name: "CIC", path: "/estados/pr/curitiba/cic" },
+  { name: "Pinheirinho", path: "/estados/pr/curitiba/pinheirinho" },
+  { name: "Sítio Cercado", path: "/estados/pr/curitiba/sitio-cercado" },
+  { name: "Boqueirão", path: "/estados/pr/curitiba/boqueirao" },
+  { name: "Santa Felicidade", path: "/estados/pr/curitiba/santa-felicidade" },
+  { name: "Colombo", path: "/estados/pr/colombo" },
+  { name: "São José dos Pinhais", path: "/estados/pr/sao-jose-dos-pinhais" },
+  { name: "Araucária", path: "/estados/pr/araucaria" },
+  { name: "Pinhais", path: "/estados/pr/pinhais" },
+  { name: "Fazenda Rio Grande", path: "/estados/pr/fazenda-rio-grande" },
+  { name: "Campo Largo", path: "/estados/pr/campo-largo" },
+  { name: "Almirante Tamandaré", path: "/estados/pr/almirante-tamandare" },
+  { name: "Piraquara", path: "/estados/pr/piraquara" },
+  { name: "Campina Grande do Sul", path: "/estados/pr/campina-grande-do-sul" },
+  { name: "Goiânia", path: "/estados/go-df/goiania" },
+  { name: "Brasília", path: "/estados/go-df/brasilia" },
+  { name: "Salvador", path: "/estados/ba/salvador" },
+  { name: "Rio de Janeiro", path: "/estados/rj/rio-de-janeiro" },
+  { name: "Porto Alegre", path: "/estados/rs/porto-alegre" },
+  { name: "São Luís", path: "/estados/ma/sao-luis" },
 ];
 
 const PERSUASIVE_TEXTS = [
@@ -77,7 +83,7 @@ const Typewriter = ({ texts }: { texts: string[] }) => {
 };
 
 export const Home = () => {
-  const [selectedLocation, setSelectedLocation] = useState<{name: string, slug: string} | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState<{name: string, path: string} | null>(null);
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -158,13 +164,13 @@ export const Home = () => {
         <div className="flex marquee-track">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex shrink-0">
-              {MARQUEE_ITEMS.map((item) => (
+              {MARQUEE_ITEMS.map((item, idx) => (
                 <button
-                  key={item.slug}
+                  key={`${item.path}-${idx}`}
                   onClick={() => setSelectedLocation(item)}
-                  className="text-gold font-secondary text-lg uppercase tracking-[0.2em] mx-12 hover:text-neon-red transition-colors flex items-center gap-3 whitespace-nowrap"
+                  className="text-gold font-secondary text-lg uppercase tracking-[0.2em] mx-12 hover:text-neon-red transition-colors flex items-center gap-3 whitespace-nowrap group"
                 >
-                  <MapPin size={18} className="text-neon-red" /> {item.name}
+                  <MapPin size={18} className="text-neon-red group-hover:scale-125 transition-transform" /> {item.name}
                 </button>
               ))}
             </div>
@@ -207,7 +213,7 @@ export const Home = () => {
                 
                 <div className="flex flex-col gap-4">
                   <Link 
-                    to={selectedLocation.slug.includes('-') && !['araucaria', 'pinhais', 'colombo', 'piraquara'].includes(selectedLocation.slug) ? `/estados/pr/curitiba/${selectedLocation.slug}` : `/estados/pr/${selectedLocation.slug}`}
+                    to={selectedLocation.path}
                     className="bg-neon-red text-white py-4 rounded-sm font-secondary tracking-widest flex items-center justify-center gap-2 hover:brightness-125 transition-all"
                   >
                     Ver Página Completa <ArrowRight size={18} />

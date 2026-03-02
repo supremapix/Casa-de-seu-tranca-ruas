@@ -102,9 +102,14 @@
     70% { opacity: 0.95; transform: scale(1.01) skewX(-0.5deg); }
   }
 
-  .marquee-content {
+  .marquee-track {
     display: flex;
-    animation: marquee 40s linear infinite;
+    width: max-content;
+    animation: marquee 60s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
   }
 
   @keyframes marquee {
